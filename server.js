@@ -23,7 +23,7 @@ app.use(passport.session());
 // Handlebars
 const exphbs = require("express-handlebars");
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine("handlebars", exphbs({ defaultLayout: "admin" }));
 app.set("view engine", "handlebars");
 
 // Requiring our routes
