@@ -6,10 +6,11 @@ module.exports = function(app) {
   // GET route for getting all of the announcements
   // findAll returns all entries for a table when used with no options
   //  McLeod comment: these next lines are the beginning of an attempt to pull db through sequelize
-  // app.get("/api/announcements", (req, res) => {
-  //   db.Announcements.findAll({}).then(dbAnnouncements => res.json(dbAnnouncements)
-  //   );
-  // });
+  app.get("/api/announcements", (req, res) => {
+    db.Announcements.findAll({}).then(dbAnnouncements => {
+      res.json(dbAnnouncements);
+    });
+  });
 
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
