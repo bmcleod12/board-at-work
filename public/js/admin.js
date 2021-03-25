@@ -1,14 +1,13 @@
-const dropdownButtons = document.querySelectorAll(".dropdownContent")
+const dropdownButtons = document.querySelectorAll(".dropdownContent");
 
-dropdownButtons.forEach(element => element.addEventListener("click",menuSelect))
+dropdownButtons.forEach(element => element.addEventListener("click",menuSelect));
 
 function menuSelect (event) {
-var clickId = event.currentTarget.getAttribute("data-id")
-var category = document.querySelector("#" +clickId)
+var clickId = event.currentTarget.getAttribute("data-id");
+var category = document.querySelector("#" +clickId);
 
-    category.classList.remove("hidden")
+    category.classList.remove("hidden");
 
-//On submit button, send to handlebars ID?
-console.log(clickId)
-};
+console.log(clickId);
+}
 

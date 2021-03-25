@@ -94,4 +94,22 @@ module.exports = function(app) {
       });
     }
   });
+
+  //Post Announcement
+  app.post("/api/:catergorie", (req, res) => {
+    console.log(req.params);
+    switch (req.params.catergorie) {
+      case "announcement":
+        createAnnouncement(req, res);
+        break;
+
+      default:
+        break;
+    }
+  });
+  function createAnnouncement(req, res) {
+    db.Announcements.create(req.body).then(dbAnnouncements => {
+      res.json(dbAnnouncements);
+    });
+  }
 };
