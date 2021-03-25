@@ -1,12 +1,17 @@
 {
-  "name": "project2",
+  "name": "board-at-work",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Bootcamp Project 2 Test",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run lint",
+    "start": "node server.js",
+    "lint": "eslint --quiet .",
+    "fix": "eslint --fix .",
+    "watch": "nodemon server.js"
   },
-  "author": "",
+  "keywords": [],
+  "author": "Brenna McLeod, Liz Giddings, Sarah Finck, Matthew Bishop, MacKenzie Clinton",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "2.4.3",
