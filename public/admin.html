@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -37,21 +38,24 @@
                             <div id="menu">
                               <span><h1>Update Message Board</h1></span>
                               <div class="dropdown-content">
-                                <p>Announcements</p>
-                                <p>Birthdays</p>
-                                <p>Events</p>
-                                <p>Inspiration</p>
-                                <p>To-do</p>
+                                <p class='dropdownContent' data-id='announce'>Announcements</p>
+                                <p class='dropdownContent' data-id='bdays'>Birthdays</p>
+                                <p class='dropdownContent'data-id='quote'>Inspiration</p>
+                                <p class='dropdownContent' data-id='toDo'>To-do</p>
+                                <p class='dropdownContent' data-id='events'>Events</p>
+                                <p class='dropdownContent' data-id='remind'>Reminders</p>
                               </div>
                             </div>    
                             
-                    <p class ='hidden'>Announcements</p>
-                   <p class='hidden'>Birthdays</p>
-                   <p class='hidden'>Events</p>
-                   <p class ='hidden'>Inspiration</p>
-                   <p class = 'hidden'>To-do</p>
-                   <!-- <p>{{announcement}}</p>  -->
-                  
+                    <p class='hidden' id='announce'>Announcements</p>
+                   <p class='hidden' id = 'bdays'>Birthdays</p>
+                   <p class='hidden' id = 'events'>Events</p>
+                   <p class ='hidden' id = 'quote'>Inspiration</p>
+                   <p class = 'hidden' id ='toDo'>To-do</p>
+                   <p class = 'hidden' id ='remind'>Reminders</p>
+
+
+                   <br><br><br><br><br>
                
                       <input type = 'text'>
                       <input type = 'submit'>
@@ -66,7 +70,7 @@
 
 
 
-
+<script src='js/admin.js'></script>
 
 </body>
 

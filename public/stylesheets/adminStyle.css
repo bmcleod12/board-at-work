@@ -146,7 +146,7 @@ body {
       background-color: rgb(209, 172, 172);
     } */
 
-    /*----dropdown menu-----*/
+    /*----dropdown menu---*/
     .dropdown {
       position: relative;
       display: inline-block;
@@ -169,3 +169,5 @@ body {
     .hidden {
       display:none;
     }
+
+    input type
