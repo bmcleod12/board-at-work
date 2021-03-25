@@ -5,11 +5,47 @@ const passport = require("../config/passport");
 module.exports = function(app) {
   // GET route for getting all of the announcements
   // findAll returns all entries for a table when used with no options
-  //  McLeod comment: these next lines are the beginning of an attempt to pull db through sequelize
-  // app.get("/api/announcements", (req, res) => {
-  //   db.Announcements.findAll({}).then(dbAnnouncements => res.json(dbAnnouncements)
-  //   );
-  // });
+  app.get("/api/announcements", (req, res) => {
+    db.Announcements.findAll({}).then(dbAnnouncements => {
+      res.json(dbAnnouncements);
+    });
+  });
+
+  app.get("/api/quotes", (req, res) => {
+    db.Quotes.findAll({}).then(dbQuotes => {
+      res.json(dbQuotes);
+    });
+  });
+
+  app.get("/api/birthdays", (req, res) => {
+    db.Birthdays.findAll({}).then(dbBirthdays => {
+      res.json(dbBirthdays);
+    });
+  });
+
+  app.get("/api/reminders", (req, res) => {
+    db.Reminders.findAll({}).then(dbReminders => {
+      res.json(dbReminders);
+    });
+  });
+
+  app.get("/api/roles", (req, res) => {
+    db.Roles.findAll({}).then(dbRoles => {
+      res.json(dbRoles);
+    });
+  });
+
+  app.get("/api/events", (req, res) => {
+    db.Events.findAll({}).then(dbEvents => {
+      res.json(dbEvents);
+    });
+  });
+
+  app.get("/api/todos", (req, res) => {
+    db.ToDos.findAll({}).then(dbToDos => {
+      res.json(dbToDos);
+    });
+  });
 
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
@@ -58,4 +94,22 @@ module.exports = function(app) {
       });
     }
   });
+
+  //Post Announcement
+  app.post("/api/:catergorie", (req, res) => {
+    console.log(req.params);
+    switch (req.params.catergorie) {
+      case "announcement":
+        createAnnouncement(req, res);
+        break;
+
+      default:
+        break;
+    }
+  });
+  function createAnnouncement(req, res) {
+    db.Announcements.create(req.body).then(dbAnnouncements => {
+      res.json(dbAnnouncements);
+    });
+  }
 };
