@@ -31,9 +31,13 @@
             <li>
                 <a>           
                     <section id='sticky1'>
-                   
+                        
                         <h1>Announcements</h1>
+
+                        {{#each announcements}}
                         <p>{{announcement}}</p>
+                        {{/each}}
+                        
                    
                 </section>
             </a>
@@ -43,8 +47,11 @@
             <li>
                 <section id='sticky2'>
                     <a href=>
-                        <h1>Quote of the Day</h1>
+                        <h1>Inspiration</h1>
+
+                        {{#each quotes}}
                         <p>{{quotes}}</p>
+                        {{/each}}
                     </a>
                 </section>
             </li>
@@ -52,8 +59,11 @@
             <li>
                 <section id='sticky3'>
                     <a href=>
+                      
                         <h1>Birthdays</h1>
-                        <p>{{birthdays}}</p>
+                         {{#each birthdays}}
+                          <p>{{birthdays}}</p>
+                        {{/each}}
                     </a>
                 </section>
             </li>
@@ -61,8 +71,11 @@
             <li>
                 <section id='sticky4'>
                     <a href=>
+                        
                         <h1>Reminders</h1>
+                        {{#each reminders}}
                         <p>{{reminders}}</p>
+                        {{/each}}
                     </a>
                 </section>
             </li>
@@ -70,8 +83,10 @@
             <li>
                 <section id='sticky5'>
                     <a href=>
-                        <h1>Upcoming Events</h1>
+                        <h1>Events</h1>
+                        {{#each events}}
                         <p>{{events}}</p>
+                        {{/each}}
                     </a>
                 </section>
             </li>
@@ -79,8 +94,11 @@
             <li>
                 <section id='sticky6'>
                     <a href=>
+                        
                         <h1>To-Do</h1>
+                        {{#each toDo}}
                         <p>{{toDo}}</p>
+                        {{/each}}
                     </a>
                 </section>
             </li>
