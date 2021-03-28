@@ -9,11 +9,30 @@ body {
   }
   
   
+  input[type=text] {
+     width: 40em;
+    height: 25em;
+    /* padding: 12px 20px; */
+    box-sizing:unset;
+    border: none; 
+    border-radius: 4px;
+    background-color: #ffc;
+    resize: none;
+    border: none;
+   
+  }
+  textarea {
+ border-radius: 0px;
+ width: 100%;
+ height: 80%
+  }
+
   .stickyNotes {
-  margin-top: 40px;
-  display:flex;
-  align-items:stretch;
-  justify-content: space-between;}
+  /* margin-top: 0px; */
+  align-items:center;
+  display:grid;
+  float:right;
+}
   
    
     h2 {
@@ -42,10 +61,7 @@ body {
       height:10em;
       width:10em;
       padding:1em;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      justify-content: center;
+     
     }
     ul li{
       margin:1em;
@@ -69,17 +85,7 @@ body {
       padding:1em;
       box-shadow: 5px 5px 7px rgba(33,33,33,.7);
     }
-  
-        
-    ul li a:hover,ul li a:focus{
-      box-shadow:10px 10px 7px rgba(0,0,0,.7);
-      transform: scale(1.25);
-      position:absolute;
-      z-index:5;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-    }
+    
   
     ul li a{
       text-decoration:none;
@@ -87,7 +93,7 @@ body {
       background:#ffc;
       display:block;
       height: 30em;
-      width:30em;
+      width:35em;
       padding:1em;
       box-shadow: 5px 5px 7px rgba(33,33,33,.7);
       transition: transform .15s linear;
@@ -97,7 +103,7 @@ body {
     }
   
   /*----------------Navbar ------------ */
-      .nav ul {
+      header {
         list-style-type: none;
         margin: 0;
         padding: 0;
@@ -105,11 +111,15 @@ body {
         background-color: #333;
       }
       
-      .nav ul li {
+      header p { 
+        float: left;
+      }
+
+      header img {
         float: left;
       }
       
-      .nav li a {
+      header a {
         display: block;
         color: white;
         text-align: center;
@@ -117,16 +127,16 @@ body {
         text-decoration: none;
       }
       
-      /* Change the link color to #111 (black) on hover */
-      .nav li a:hover {
+      /* Change the link color to #111 (black) on  hover*/
+      header p a:hover {
         background-color: #111;
       }
     
-    .nav li {
+    header p {
       float: left;
     }
     
-    .nav li a {
+    header p a {
       display: block;
       color: white; 
       text-align: center;
@@ -134,40 +144,42 @@ body {
       text-decoration: none;
     }
     
-    header ul li a {
+    header p a {
   font-weight: bolder;
-  font-family: 'Reenie Beanie';
+  font-family: 'chalky';
   color:ivory;
-  
-  
     }
-    /* Change the link color to #111 (black) on hover */
-    /* li a:hover {
-      background-color: rgb(209, 172, 172);
-    } */
+  
 
     /*----dropdown menu---*/
     .dropdown {
-      position: relative;
-      display: inline-block;
+      position:sticky;
+      display:inline;
     }
     
     .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f9f9f9;
-      min-width: 160px;
+    position:absolute;
+      background-color: #ffc;
+      min-width: 200px;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
       padding: 12px 16px;
-      z-index: 1;
+       z-index: 1;  
     }
     
     .dropdown:hover .dropdown-content {
       display: block;
     }
 
+    .dropdown div div p:hover {
+      background-color: #111;
+      color:#ffc;
+      cursor: pointer;
+    }
     .hidden {
       display:none;
+    } 
+    input[type=submit] {
+      background-color:black;
+      color:#ffc;
+      cursor:pointer;
     }
-
-    input type
