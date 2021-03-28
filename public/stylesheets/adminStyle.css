@@ -1,185 +1,163 @@
 body {
-    background-image: url("../corkboard.jpg");
-    background-color: #999999; 
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-  
-  }
-  
-  
-  input[type=text] {
-     width: 40em;
-    height: 25em;
-    /* padding: 12px 20px; */
-    box-sizing:unset;
-    border: none; 
-    border-radius: 4px;
-    background-color: #ffc;
-    resize: none;
-    border: none;
-   
-  }
-  textarea {
- border-radius: 0px;
- width: 100%;
- height: 80%
-  }
-
-  .stickyNotes {
-  /* margin-top: 0px; */
-  align-items:center;
-  display:grid;
-  float:right;
+  background-image: url("../assets/images/corkboard.jpg");
+  background-color: #999999;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
-  
-   
-    h2 {
-      font-weight: bold;
-      font-size: 2rem;
-    }
-     
-    p {
-      font-size: 1rem;
-      font-weight: normal;
-    }
-     
-    ul,li{
-      list-style:none;
-    }
-    ul{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    ul li a{
-      text-decoration:none;
-      color:#000;
-       background:#ffc; 
-      display:block;
-      height:10em;
-      width:10em;
-      padding:1em;
-     
-    }
-    ul li{
-      margin:1em;
-    }
-  
-    h1 {
-      font-weight: bold;
-      font-size: 2rem;
-    }
-    p {
-      font-family: 'Reenie Beanie';
-      font-size: 2rem;
-    }
-    ul li a{
-      text-decoration:none;
-      color:#000;
-       background:#ffc; 
-      display:block;
-      height:10em;
-      width:10em;
-      padding:1em;
-      box-shadow: 5px 5px 7px rgba(33,33,33,.7);
-    }
-    
-  
-    ul li a{
-      text-decoration:none;
-      color:#000;
-      background:#ffc;
-      display:block;
-      height: 30em;
-      width:35em;
-      padding:1em;
-      box-shadow: 5px 5px 7px rgba(33,33,33,.7);
-      transition: transform .15s linear;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-    }
-  
-  /*----------------Navbar ------------ */
-      header {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #333;
-      }
-      
-      header p { 
-        float: left;
-      }
 
-      header img {
-        float: left;
-      }
-      
-      header a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-      }
-      
-      /* Change the link color to #111 (black) on  hover*/
-      header p a:hover {
-        background-color: #111;
-      }
-    
-    header p {
-      float: left;
-    }
-    
-    header p a {
-      display: block;
-      color: white; 
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-    }
-    
-    header p a {
+input[type="text"] {
+  width: 40em;
+  height: 25em;
+  /* padding: 12px 20px; */
+  box-sizing: unset;
+  border: none;
+  border-radius: 4px;
+  background-color: #ffc;
+  resize: none;
+  border: none;
+}
+
+textarea {
+  border-radius: 0px;
+  width: 100%;
+  height: 80%;
+}
+
+.stickyNotes {
+  /* margin-top: 0px; */
+  align-items: center;
+  display: grid;
+  float: right;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+ul li {
+  margin: 1em;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 2rem;
+}
+p {
+  font-family: "Reenie Beanie";
+  font-size: 2rem;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #000;
+  background: #ffc;
+  display: block;
+  height: 10em;
+  width: 35em;
+  padding: 1em;
+  box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+  transition: transform 0.15s linear;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/*----------------Navbar ------------ */
+header {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+header p {
+  float: left;
+}
+
+header img {
+  float: left;
+}
+
+header a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on  hover*/
+header p a:hover {
+  background-color: #111;
+}
+
+header p {
+  float: left;
+}
+
+header p a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+header p a {
   font-weight: bolder;
-  font-family: 'chalky';
-  color:ivory;
-    }
-  
+  font-family: "chalky";
+  color: ivory;
+}
 
-    /*----dropdown menu---*/
-    .dropdown {
-      position:sticky;
-      display:inline;
-    }
-    
-    .dropdown-content {
-    position:absolute;
-      background-color: #ffc;
-      min-width: 200px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      padding: 12px 16px;
-       z-index: 1;  
-    }
-    
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
+/*----dropdown menu---*/
+.dropdown {
+  position: sticky;
+  display: inline;
+}
 
-    .dropdown div div p:hover {
-      background-color: #111;
-      color:#ffc;
-      cursor: pointer;
-    }
-    .hidden {
-      display:none;
-    } 
-    input[type=submit] {
-      background-color:black;
-      color:#ffc;
-      cursor:pointer;
-    }
+.dropdown-content {
+  position: absolute;
+  background-color: #ffc;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown div div p:hover {
+  background-color: #111;
+  color: #ffc;
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
+input[type="submit"] {
+  background-color: black;
+  color: #ffc;
+  cursor: pointer;
+}
