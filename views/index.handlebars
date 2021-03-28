@@ -1,63 +1,71 @@
 <div>
-  <div class='stickyNotes'>
+  <div>
     <ul>
       <li>
-        <a>
+        <a class='stickyNotes'>
           <section id='sticky1'>
             <h1>Announcements</h1>
-              {{#each announcements}}
-                <p>{{announcement}}</p>
-              {{/each}}
+            {{#each announcements}}
+            <p>{{announcement}}</p>
+            {{/each}}
           </section>
         </a>
       </li>
 
       <li>
-        <section id='sticky2'>
-          <h1>Quote of the Day</h1>
+        <a class='stickyNotes'>
+          <section id='sticky2'>
+            <h1>Inspiration</h1>
             {{#each quotes}}
-              <p>{{quote}}</p>
+            <p>{{quote}}</p>
             {{/each}}
-        </section>
+          </section>
+        </a>
       </li>
 
       <li>
-        <section id='sticky3'>
-          <h1>Birthdays</h1>
+        <a class='stickyNotes'>
+          <section id='sticky3'>
+            <h1>Birthdays</h1>
             {{#each birthdays}}
-              <p>{{birthdayMonth}} - {{employee}}</p>
+            <p>{{birthdayMonth}} - {{employee}}</p>
             {{/each}}
-        </section>
+          </section>
+        </a>
       </li>
 
       <li>
-        <section id='sticky4'>
-          <h1>Reminders</h1>
+        <a class='stickyNotes'>
+          <section id='sticky4'>
+            <h1>Reminders</h1>
             {{#each reminders}}
-              <p>{{reminder}}</p>
+            <p>{{reminder}}</p>
             {{/each}}
-        </section>
+          </section>
+        </a>
       </li>
 
       <li>
-        <section id='sticky5'>
-          <h1>Upcoming Events</h1>
+        <a class='stickyNotes'>
+          <section id='sticky5'>
+            <h1>Upcoming Events</h1>
             {{#each events}}
-              <p>{{event}}</p>
+            <p>{{event}}</p>
             {{/each}}
-        </section>
+          </section>
+        </a>
       </li>
 
       <li>
+        <a class='stickyNotes'>
         <section id='sticky6'>
           <h1>To-Do</h1>
-            {{#each toDos}}
-              <p>{{task}}</p>
-            {{/each}}
+          {{#each toDos}}
+          <p>{{task}}</p>
+          {{/each}}
         </section>
+        </a>
       </li>
+    </ul>
   </div>
-  </ul>
-  </body>
-  </html>
 </div>
