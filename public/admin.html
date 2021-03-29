@@ -3,51 +3,67 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Board@Work</title>
-    <link rel="stylesheet" href="stylesheets/adminStyle.css">
-    <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Board@Work</title>
+  <link rel="stylesheet" href="stylesheets/adminStyle.css">
+  <!-- Bootstrap for Notification -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <!-- socket.io js  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.3/socket.io.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <header class='nav'>
-    <img src='yawn.jpg' width=125px height=130px>
-    <p><a href ="/">Board@Work</a></p>
+  <img src='yawn.jpg' width=125px height=130px>
+  <p><a href="/">Board@Work</a></p>
   <p><a href="admin.html">Admin</a></p>
 </header>
 
 <body>
-  <section id='admin' class = 'dropdown'>                   
+  <section id='admin' class='dropdown'>
     <div id="menu">
-      <span><h1>Update Message Board</h1></span>
+      <span>
+        <h1>Update Message Board</h1>
+      </span>
       <div class="dropdown-content">
         <p class='dropdownContent' data-id='announce'>Announcements</p>
         <p class='dropdownContent' data-id='bdays'>Birthdays</p>
-        <p class='dropdownContent'data-id='quote'>Inspiration</p>
+        <p class='dropdownContent' data-id='quote'>Inspiration</p>
         <p class='dropdownContent' data-id='toDo'>To-do</p>
         <p class='dropdownContent' data-id='events'>Events</p>
         <p class='dropdownContent' data-id='remind'>Reminders</p>
       </div>
-    </div>    
+    </div>
     <div class='stickyNotes'>
-        <ul>
-            <li>
-                <a>           
-                   <p class='hidden' id='announce'>Announcements</p>
-                   <p class='hidden' id = 'bdays'>Birthdays</p>
-                   <p class='hidden' id = 'events'>Events</p>
-                   <p class ='hidden' id = 'quote'>Inspiration</p>
-                   <p class = 'hidden' id ='toDo'>To-do</p>
-                 <p class = 'hidden' id ='remind'>Reminders</p>             
-                      <input type ='text'>
-                      <input type ='submit'>              
-                </section>
-            </a>
-        </li>
-    </ul>
-<script src='js/admin.js'></script>
+      <ul>
+        <li>
+          <a>
+            <p class='hidden' id='announce'>Announcements</p>
+            <p class='hidden' id='bdays'>Birthdays</p>
+            <p class='hidden' id='events'>Events</p>
+            <p class='hidden' id='quote'>Inspiration</p>
+            <p class='hidden' id='toDo'>To-do</p>
+            <p class='hidden' id='remind'>Reminders</p>
+            <input type="text" id="name" placeholder="Who is sending this notification?">
+            <input type="text" id="subject" placeholder="Subject">
+            <textarea name="" cols="30" rows="7" placeholder="Message" id="message"></textarea>
+            <input type='button' onclick="sendMessage()" id="submit" value="Send Notification">
+  </section>
+  </a>
+  </li>
+  </ul>
+  <script src='js/admin.js'></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- js for notification -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js"></script>
+
 </body>
+
 </html>
