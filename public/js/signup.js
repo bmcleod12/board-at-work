@@ -3,6 +3,7 @@ $(document).ready(() => {
   const signUpForm = $("form.signup");
   const emailInput = $("input#email-input");
   const passwordInput = $("input#password-input");
+  const socket = io.connect("https://project-2-group-3.herokuapp.com/");
 
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", event => {
@@ -39,4 +40,12 @@ $(document).ready(() => {
     $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
   }
+  socket.on("messageSent", message => {
+    $.notify(
+      "New Notification\n" + message.subject + "\n\nFrom: " + message.name,
+      {
+        className: "success"
+      }
+    );
+  });
 });
