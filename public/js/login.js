@@ -3,6 +3,7 @@ $(document).ready(() => {
   const loginForm = $("form.login");
   const emailInput = $("input#email-input");
   const passwordInput = $("input#password-input");
+  const socket = io.connect("https://project-2-group-3.herokuapp.com/");
 
   // When the form is submitted, we validate there's an email and password entered
   loginForm.on("submit", event => {
@@ -36,4 +37,12 @@ $(document).ready(() => {
         console.log(err);
       });
   }
+  socket.on("messageSent", message => {
+    $.notify(
+      "New Notification\n" + message.subject + "\n\nFrom: " + message.name,
+      {
+        className: "success"
+      }
+    );
+  });
 });

@@ -8,8 +8,7 @@ const passport = require("./config/passport");
 
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 3000;
-// const db = require("./models");
-// const server = db.sequelize.sync().then(() => {
+const db = require("./models");
 
 // Creating express app and configuring middleware needed for authentication
 const app = express();
@@ -35,20 +34,20 @@ require("./routes/api-routes.js")(app);
 
 // Syncing our database and logging a message to the user upon success
 
-const server = app.listen(PORT, () => {
-  console.log(
-    `==> 🌎  Listening on port ${PORT}. Visit http://localhost:${PORT}/ in your browser.`
-  );
-});
+db.sequelize.sync().then(() => {
+  const server = app.listen(PORT, () => {
+    console.log(
+      `==> 🌎  Listening on port ${PORT}. Visit http://localhost:${PORT}/ in your browser.`
+    );
+  });
+  const io = socket(server);
+  io.on("connection", socket => {
+    console.log("User " + socket.id);
 
-const io = socket(server);
+    socket.on("messageSent", message => {
+      socket.broadcast.emit("messageSent", message);
 
-io.on("connection", socket => {
-  console.log("User " + socket.id);
-
-  socket.on("messageSent", message => {
-    socket.broadcast.emit("messageSent", message);
-
-    io.emit("messageSent", JSON.stringify(message));
+      // io.emit("messageSent", JSON.stringify(message));
+    });
   });
 });
