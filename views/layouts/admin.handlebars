@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Board@Work</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.3/socket.io.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="/public/assets/css/adminStyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -13,13 +16,15 @@
 
 <header class='nav'>
 
-<ul>
-    <li><img src='/public/assets/images/yawn.jpg' width=100px height=100px></li>
-        
-    <li>Board@Work</li>
-  
+    <ul>
+        <li><img src='/public/assets/images/yawn.jpg' width=100px height=100px></li>
 
-  <li><p>My Account</p></li>
+        <li>Board@Work</li>
+
+
+        <li>
+            <p>My Account</p>
+        </li>
     </ul>
 </header>
 
@@ -28,22 +33,24 @@
         <ul>
 
             <li>
-                <a>           
+                <a>
                     <section id='admin'>
-                   
+
                         <h1>Announcements</h1>
                         <p>{{announcement}}</p>
-                   
-                </section>
-            </a>
-        </li>
+
+                    </section>
+                </a>
+            </li>
 
 
-    </ul>
+        </ul>
 
 
 
 
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js"></script>
 
 </body>
 

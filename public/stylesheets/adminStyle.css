@@ -8,8 +8,8 @@ body {
 }
 
 input[type="text"] {
-  width: 40em;
-  height: 25em;
+  width: 30em;
+  height: 5em;
   /* padding: 12px 20px; */
   box-sizing: unset;
   border: none;

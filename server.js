@@ -1,12 +1,15 @@
 // Requiring necessary npm packages
 const express = require("express");
 const session = require("express-session");
+const socket = require("socket.io");
+
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
 
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 3000;
-const db = require("./models");
+// const db = require("./models");
+// const server = db.sequelize.sync().then(() => {
 
 // Creating express app and configuring middleware needed for authentication
 const app = express();
@@ -31,12 +34,21 @@ require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
 // Syncing our database and logging a message to the user upon success
-db.sequelize.sync().then(() => {
-  app.listen(PORT, () => {
-    console.log(
-      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-      PORT,
-      PORT
-    );
+
+const server = app.listen(PORT, () => {
+  console.log(
+    `==> 🌎  Listening on port ${PORT}. Visit http://localhost:${PORT}/ in your browser.`
+  );
+});
+
+const io = socket(server);
+
+io.on("connection", socket => {
+  console.log("User " + socket.id);
+
+  socket.on("messageSent", message => {
+    socket.broadcast.emit("messageSent", message);
+
+    io.emit("messageSent", JSON.stringify(message));
   });
 });

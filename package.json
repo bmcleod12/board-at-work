@@ -18,10 +18,12 @@
     "express": "^4.17.0",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.16.1",
+    "jquery": "^3.6.0",
     "mysql2": "^1.6.5",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "sequelize": "^5.22.4"
+    "sequelize": "^5.22.4",
+    "socket.io": "^4.0.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",
